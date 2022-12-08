@@ -1,8 +1,6 @@
 #include <stdio.h>
-
 /**
 * @main - Entry point
-*
 * @brief: Prints out a string output using puts
 * Return: Always 0 (success)
 */

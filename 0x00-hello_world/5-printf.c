@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
 * @function: main
 * @brief: Prints out a strin output using prrintf
