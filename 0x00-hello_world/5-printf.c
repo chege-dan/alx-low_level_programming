@@ -1,15 +1,12 @@
 #include <stdio.h>
 
 /**
- * author : Dan-Chege
- * main - entry point
- * prints a sentence with a new line using printf
- * return : always 0 (success)
- * */
-int main (void)
+* @function: main
+* @brief: Prints out a strin output using prrintf
+* @return: 0
+*/
+int main(void)
 {
-	/*printing the string*/
-	printf("with proper grammar, but the outcome is a piece of art,\n");
-	return 0;
-
+		printf("with proper grammar, but the outcome is a piece of art,\n");
+			return 0;
 }
