@@ -1,9 +1,11 @@
 #include <stdio.h>
 
 /**
-* @function: main
+*  
+* main - Entry point
+*
 * @brief: Prints out a string output using puts
-* @return: 0
+* Return: Always 0 (success)
 */
 int main(void)
 {
