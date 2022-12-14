@@ -1,40 +1,60 @@
 #include "main.h"
+
 /**
- * print_times_table - print thne times table upto n times but not above 15
- * @n: The degree of the times table
- * Return: Always 0
+ * print_number_w_spaces- Print a multiple digit number with leading spaces
+ * @n: Number to print
+ */
+void print_number_w_spaces(int n)
+{
+	int max;
+	int zeros;
+
+	zeros = 0;
+	for (max = 1000; max > 1; max /= 10)
+	{
+		if (n < max)
+		{
+			if (zeros)
+				_putchar('0');
+			else
+				_putchar(' ');
+		}
+		else
+		{
+			zeros = 1;
+			_putchar('0' + (n / max));
+			n %= max;
+		}
+	}
+}
+
+/**
+ * print_times_table- Prints the times table of n, starting with 0
+ * @n: The number whose multiplication table is to be printed
  */
 void print_times_table(int n)
 {
-	int row, columnn, productt;
+	int row;
+	int column;
+	int value;
 
-	if (n >= 0 && n <= 15)
+	if ((n > 15) || (n < 0))
+		return;
+	for (row = 0; row <= n; row++)
 	{
-		for (row = 0; row <= n; row++)
+		for (column = 0; column <= n; column++)
 		{
-			_putchar('0');
-
-			for (columnn = 1; columnn <= n; columnn++)
+			value = column * row;
+			if (column != 0)
+			{
+				print_number_w_spaces(value);
+			}
+			_putchar('0' + (value % 10));
+			if (column < n)
 			{
 				_putchar(',');
-				_putchar(' ');
-
-				productt = row * columnn;
-
-				if (productt <= 99)
-					_putchar(' ');
-				if (productt <= 9)
-					_putchar(' ');
-				if (productt >= 100)
-				{
-					_putchar((productt / 100) + '0');
-					_putchar((productt % 100) + '0');
-				}
-				else if (productt <= 100 && productt >= 10)
-					_putchar((productt / 10) + '0');
-				_putchar((productt % 10) + '0');
 			}
-			_putchar('\n');
 		}
+		_putchar('\n');
 	}
 }
