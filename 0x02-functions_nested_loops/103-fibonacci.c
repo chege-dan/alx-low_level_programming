@@ -1,27 +1,24 @@
 #include <stdio.h>
-
 /**
- * main- Print first 50 fibonacci numbers
- * Return: 0
+ * main - Print a fibonacci sequence suming previous 3 numbers
+ * Return: always 0
  */
 int main(void)
 {
-	int cnt;
-	unsigned long prev;
-	unsigned long cur;
-	unsigned long  tmp;
+	unsigned long num1, num2, num3, sum;
+	int counter;
 
-	prev = 1;
-	printf("%lu", prev);
-	cur = 2;
-	for (cnt = 1; cnt < 50; cnt++)
+	num1 = 0;
+	num2 = 1;
+	sum = 0;
+	for (counter = 0; counter < 80; counter++)
 	{
-		printf(", %lu", cur);
-		tmp = prev + cur;
-		prev = cur;
-		cur = tmp;
+		num3 = num1 + num2;
+		num1 = num2;
+		num2 = num3;
+		if ((num3 < 4000000) && (num3 % 2 == 0))
+			sum = sum + num3;
 	}
-	printf("\n");
-
+	printf("%lu\n", sum);
 	return (0);
 }
