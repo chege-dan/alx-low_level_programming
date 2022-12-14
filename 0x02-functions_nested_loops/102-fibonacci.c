@@ -3,8 +3,7 @@
  * main - Print first 50 fibonachi numbers starting with 1 & 2
  * Return: Always 0
  */
-int main(void)
-{
+int main(void){
 	int counter;
 	unsigned long num1, num2, sum;
 
