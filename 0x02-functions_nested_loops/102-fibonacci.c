@@ -9,13 +9,13 @@ int main(void)
 	unsigned long num1, num2, sum;
 
 	num1 = 0;
-	num2 = 1;
-	for (counter = 0; counter < 50; counter++)
+    num2 = 1;
+    for (counter = 0; counter < 50; counter++)
 	{
-		sum = num1 + num2;
+        sum = num1 + num2;
 		printf("%lu", sum);
-		num1 = num2;
-		num2 = sum;
+        num1 = num2;
+        num2 = sum;
 		if (counter < 49)
 			printf(", ");
 		else
