@@ -1,18 +1,19 @@
 #include "main.h"
+
 /**
-* print_chessboard - Function that  prints the chessboard.
-* @a: An array
-* Return: Void
+* print_chessboard - Prints out a chess board
+* @a: Pointer to chessboard
 */
 void print_chessboard(char (*a)[8])
 {
-int count1;
-int count2;
+unsigned int row, col;
 
-for (count1 = 0; count1 < 8; count1++)
+for (row = 0; row < 8; row++)
 {
-for (count2 = 0; count2 < 8; count2++)
-_putchar(a[count1][count2]);
+for (col = 0; col < 8; col++)
+{
+_putchar(a[row][col]);
+}
 _putchar('\n');
 }
 }
