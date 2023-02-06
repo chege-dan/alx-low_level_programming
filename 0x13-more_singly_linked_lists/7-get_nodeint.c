@@ -2,19 +2,23 @@
 #include <stdlib.h>
 
 /**
- * get_nodeint_at_index - recovers a node at a specified index
- * @head: head node
- * @index: index of node to be acquired
- * Return: address of the node
- */
+ * get_nodeint_at_index - Find a node in a list.
+ * @head: Address of the first node in a list.
+ * @index: Position of a the node to find (starting from 0).
+ * Return: Node address.
+ **/
+
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	unsigned int check;
+	unsigned int y = 0;
 
-	for (check = 0; check <= index && head; head = head->next, check++)
+	if (head == NULL)
+		return (NULL);
+	for (y = 0; y < index; y++)
 	{
-		if (check == index)
-			return (head);
+		head = head->next;
+		if (head == NULL)
+			return (NULL);
 	}
-	return (NULL);
+	return (head);
 }
