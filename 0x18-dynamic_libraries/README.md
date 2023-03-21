@@ -1,1 +1,1 @@
-Practice  of Dynamic library 
+Dynamic library 
