@@ -1,29 +1,32 @@
 #include "main.h"
-#include <stddef.h>
 
 /**
- * *_strstr - find frst occurence
- * @haystack: str
- * @needle: substr
- * Return: char * or NULL
- */
+* _strstr - function locate
+* @haystack: pointer to char
+* @needle: pointer to char
+* Return: 0
+*/
+
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j;
-	char *p = NULL;
+	char *result = haystack, *fneedle = needle;
 
-	for (i = 0; haystack[i]; i++)
+	while (*haystack)
 	{
-		for (j = 0; needle[j]; j++)
+		while (*needle)
 		{
-			if (needle[j] != haystack[i + j])
+			if (*haystack++ != *needle++)
+			{
 				break;
+			}
 		}
-		if (!needle[j])
+		if (!*needle)
 		{
-			p = (haystack + i);
-			break;
+			return (result);
 		}
+		needle = fneedle;
+		result++;
+		haystack = result;
 	}
-	return (p);
+	return (0);
 }

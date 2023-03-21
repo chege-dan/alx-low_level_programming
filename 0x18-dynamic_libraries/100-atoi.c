@@ -1,32 +1,32 @@
 #include "main.h"
 
 /**
- * _atoi - convert str to int
- * @s: chr *
- * Return: int
+ * _atoi - convert string to intger
+ * @s: pointer to string
+ * Return: void
  */
+
 int _atoi(char *s)
 {
-	int i, j, k;
+	int sign;
+	unsigned int a;
+	char *b;
 
-	j = 0;
-	k = -1;
-	for (i = 0; s[i] != '\0'; i++)
+	b = s;
+	a = 0;
+	sign = 1;
+	while (*b != '\0' && (*b < '0' || *b > '9'))
 	{
-		if (s[i] == '-')
-			k *= -1;
-		if (s[i] > 47 && s[i] < 58)
-		{
-			if (j < 0)
-				j = (j + 10) - (s[i] - '0');
-			else
-				j = (s[i] - '0') * -1;
-
-			if (s[i + 1] < 48 || s[i + 1] > 5)
-			       break;
-		}
+		if (*b == '-')
+			sign *= -1;
+		b++;
 	}
-	if (k < 0)
-		k *= -1;
-	return (j);
+	if (*b != '\0')
+	{
+		do {
+			a = a * 10 + (*b - '0');
+			b++;
+		} while (*b >= '0' && *b <= '9');
+	}
+	return (a * sign);
 }

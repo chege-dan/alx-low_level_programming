@@ -1,22 +1,25 @@
 #include "main.h"
-#include <stddef.h>
+#include <stdio.h>
 
 /**
- * *_strpbrk - find str
- * @s: str
- * @accept: substr
- * Return: char * or NULL
+ * _strpbrk - bytes
+ * @s: pointer to char
+ * @accept: pointer to char
+ * Return: NULL
  */
+
 char *_strpbrk(char *s, char *accept)
 {
-	int i, j;
+	int i;
 
-	for (i = 0; s[i]; i++)
+	while (*s)
 	{
-		for (j = 0; accept[j]; j++)
+		for (i = 0; accept[i]; i++)
 		{
-			if (accept[j] == s[i])
-				return ((s + i));
+			if (*s == accept[i])
+			{
+				return (s);
+			}
 		}
 		s++;
 	}

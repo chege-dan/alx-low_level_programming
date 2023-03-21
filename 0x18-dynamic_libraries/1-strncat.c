@@ -1,38 +1,30 @@
 #include "main.h"
 
 /**
- * *_strncat - join two strs to ptn n
- * @dest: concat to
- * @src: to be concatenated
- * @n: stop at
- * Return: char *
+ * _strncat - concatenates two strings
+ * @src: a value to be append
+ * @dest: a value to append
+ * @n: input value
+ * Return:  pointer to the resulting string dest
  */
 
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, j, k, m, z;
-	char np[100];
+	int a;
+	int b;
 
-	i = 0;
-	while (dest[i] != '\0')
-		i++;
-	j = 0;
-	while (src[j] != '\0')
-		j++;
-
-	for (k = 0; k < i; k++)
-		np[k] = dest[k];
-	for (m = i; m < i + j; m++)
-		np[m] = src[m - i];
-
-	z = 0;
-	if (n > j)
-		n = j;
-
-	while (z < i + n)
+	a = 0;
+	while (dest[a] != '\0')
 	{
-		dest[z] = np[z];
-		z++;
+		a++;
 	}
+	b = 0;
+	while (b < n && src[b] != '\0')
+	{
+		dest[a] = src[b];
+		a++;
+		b++;
+	}
+	dest[a] = '\0';
 	return (dest);
 }
